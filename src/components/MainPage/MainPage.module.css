@@ -1,0 +1,150 @@
+.mainpage {
+  z-index: -5;
+  background-color: #212930;
+  color: #c3c8cd;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#name {
+  font-family: "Fredoka One";
+  font-size: 10vh;
+  line-height: 10vh;
+  margin-bottom: 3vh;
+  cursor: default;
+}
+
+#occupation {
+  font-family: "Fredoka One";
+  font-size: 5vh;
+  line-height: 5vh;
+  margin-bottom: 2vh;
+  cursor: default;
+}
+
+#icon_block {
+  width: 40vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2vh;
+}
+
+.icon_click {
+  width: 5vh;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_facebook,
+.icon_linkedin,
+.icon_phone {
+  z-index: 5;
+  font-size: 5vh;
+  color: #c3c8cd;
+}
+
+.icon_facebook:hover {
+  cursor: grab;
+  color: #3b5998;
+}
+
+.icon_linkedin:hover {
+  cursor: grab;
+  color: #0e76a8;
+}
+
+.icon_phone:hover {
+  cursor: grab;
+  color: #00b900;
+}
+
+.icon_facebook:active,
+.icon_linkedin:active,
+.icon_phone:active {
+  cursor: grabbing;
+  font-size: 4vh;
+}
+
+.icon_mail {
+  z-index: 5;
+  font-size: 5.834vh;
+  color: #c3c8cd;
+}
+
+.icon_mail:hover {
+  cursor: grab;
+  color: white;
+}
+
+.icon_mail:active {
+  cursor: grabbing;
+  font-size: 4.667vh;
+}
+
+#link {
+  all: unset;
+}
+
+#link:hover {
+  cursor: grab;
+  color: #868f98;
+}
+
+#link:active {
+  cursor: grabbing;
+  font-size: 90%;
+}
+
+.textBox {
+  position: relative;
+  border: 2px solid #c3c8cd;
+  border-radius: 1.5vh;
+  padding: 1vh;
+  margin: 0;
+  font-size: 2vh;
+  font-weight: bold;
+  opacity: 0;
+}
+
+@keyframes fall_in {
+  0% {
+    opacity: 0;
+    left: -50%;
+  }
+  100% {
+    opacity: 1;
+    left: 0%;
+  }
+}
+
+@keyframes fall_out {
+  0% {
+    opacity: 1;
+    left: 0%;
+  }
+  100% {
+    opacity: 0;
+    left: 50%;
+  }
+}
+
+.textBox.fall_in {
+  animation-name: fall_in;
+  animation-duration: 1s;
+  opacity: 1;
+}
+
+.textBox.fall_out {
+  animation-name: fall_out;
+  animation-duration: 1s;
+  opacity: 0;
+}
