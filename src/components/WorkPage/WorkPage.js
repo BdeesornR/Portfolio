@@ -6,6 +6,7 @@ import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 
+import Aux from "../../hoc/Auxiliary/Auxiliary";
 import hamburger from "../../assets/Slider/Hamburger/Hamburger.svg";
 import counter from "../../assets/Slider/Counter/Counter.svg";
 import grouping from "../../assets/Slider/Router_String/Router_String.svg";
@@ -14,20 +15,92 @@ import "./WorkPage.css";
 
 SwiperCore.use([EffectCoverflow, Navigation, Pagination]);
 
-const cardImage = (
-  <img
-    src={workImage}
-    alt="card_background_image"
-    style={{
-      zIndex: "-10",
-      width: "1000px",
-      height: "1000px",
-      position: "absolute",
-    }}
-  />
-);
-
 const workPage = (props) => {
+  const cardImage = (
+    <img
+      src={workImage}
+      alt="card_background_image"
+      style={{
+        zIndex: "-10",
+        width: "1000px",
+        height: "1000px",
+        position: "absolute",
+      }}
+    />
+  );
+
+  let winWidth = window.innerWidth;
+  let slideNum = 1;
+  let exampleInfo = [
+    <Aux>
+      Program based on React.js <br />
+      notable dependencies <br />
+      React, React Router, Redux, prop-types
+    </Aux>,
+    <Aux>
+      Program based on React.js <br />
+      notable dependencies <br />
+      React, Redux
+    </Aux>,
+    <Aux>
+      Program based on React.js <br />
+      notable dependencies <br />
+      React, React Router, Redux
+    </Aux>,
+  ];
+
+  if (winWidth >= 480 && winWidth < 768) {
+    slideNum = 2;
+  }
+
+  if (winWidth >= 768 && winWidth < 1200) {
+    slideNum = 2;
+    exampleInfo = [
+      <Aux>
+        Program based on React.js <br />
+        notable dependencies <br />
+        React, React Router, Redux, prop-types
+      </Aux>,
+      <Aux>
+        Program based on React.js <br />
+        notable dependencies <br />
+        React, Redux
+      </Aux>,
+      <Aux>
+        Program based on React.js <br />
+        notable dependencies <br />
+        React, React Router, Redux
+      </Aux>,
+    ];
+  }
+
+  if (winWidth >= 1200) {
+    slideNum = 2;
+    exampleInfo = [
+      <Aux>
+        Program based on React.js <br />
+        notable dependencies <br />
+        React <br />
+        React Router <br />
+        Redux <br />
+        prop-types
+      </Aux>,
+      <Aux>
+        Program based on React.js <br />
+        notable dependencies <br />
+        React <br />
+        Redux
+      </Aux>,
+      <Aux>
+        Program based on React.js <br />
+        notable dependencies <br />
+        React <br />
+        React Router <br />
+        Redux
+      </Aux>,
+    ];
+  }
+
   return (
     <div className="workPage">
       <p className="headline">Showcase</p>
@@ -35,7 +108,7 @@ const workPage = (props) => {
         <div className="swiper-button-prev" />
         <div className="carousel_pagination">
           <Swiper
-            slidesPerView={2}
+            slidesPerView={slideNum}
             centeredSlides={true}
             loop={true}
             grabCursor={true}
@@ -72,8 +145,8 @@ const workPage = (props) => {
                     alt="web_hamburger"
                   />
                 </a>
-                <div style={{ width: "38%", height: "294px" }}>
-                  <p className="example_info">Heloooooooooooooooo</p>
+                <div className="example_block">
+                  <p className="example_info">{exampleInfo[0]}</p>
                 </div>
               </div>
             </SwiperSlide>
@@ -88,8 +161,8 @@ const workPage = (props) => {
                 >
                   <img className="card_pic" src={counter} alt="web_counter" />
                 </a>
-                <div style={{ width: "38%", height: "294px" }}>
-                  <p className="example_info">Heloooooooooooooooooooooooooo</p>
+                <div className="example_block">
+                  <p className="example_info">{exampleInfo[1]}</p>
                 </div>
               </div>
             </SwiperSlide>
@@ -104,8 +177,8 @@ const workPage = (props) => {
                 >
                   <img className="card_pic" src={grouping} alt="web_grouping" />
                 </a>
-                <div style={{ width: "38%", height: "294px" }}>
-                  <p className="example_info">Heloooooooooooooooooooooooooo</p>
+                <div className="example_block">
+                  <p className="example_info">{exampleInfo[2]}</p>
                 </div>
               </div>
             </SwiperSlide>
@@ -114,6 +187,7 @@ const workPage = (props) => {
         </div>
         <div className="swiper-button-next" />
       </div>
+      <div />
     </div>
   );
 };

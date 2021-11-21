@@ -1,32 +1,80 @@
 .SideDrawer {
-    position: fixed;
-    width: 280px;
-    max-width: 70%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 200;
-    background-color: white;
-    padding: 32px 16px;
-    box-sizing: border-box;
-    transition: transform 0.3s ease-out;
+  position: fixed;
+  width: 280px;
+  max-width: 60%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 200;
+  background-color: #c3c8cd;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-out;
+
+  font-family: "Nunito";
+  font-size: 16px;
+  font-weight: bold;
+  color: #212930;
 }
 
-@media (min-width: 500px) {
-    .SideDrawer {
-        display: none;
-    }
+.logo_div {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.logo_block {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  box-sizing: content-box;
+
+  fill: #212930;
+  stroke: #212930;
 }
 
 .Open {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .Close {
-    transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
-.Logo {
-    height: 11%;
-    margin-bottom: 32px;
+@media (min-width: 376px) {
+  .logo_div {
+    display: inline-block;
+    position: relative;
+    width: 90px;
+    height: 90px;
+  }
+
+  .logo_block {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (min-width: 480px) {
+  .logo_div {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+
+  .logo_block {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .SideDrawer {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
 }

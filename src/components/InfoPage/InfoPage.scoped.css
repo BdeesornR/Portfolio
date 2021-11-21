@@ -1,0 +1,147 @@
+/*mobile*/
+
+.infoPage {
+  background-color: #212930;
+  color: #c3c8cd;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.headline {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 15px 20px;
+  cursor: default;
+  align-self: flex-end;
+}
+
+.content_block {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.info_circle {
+  position: relative;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+.bullet {
+  position: absolute;
+  top: 40%;
+}
+
+.bullet div {
+  position: relative;
+  display: flex;
+  height: 40px;
+  cursor: default;
+  background-color: #868f98;
+  padding: 4px;
+  border-radius: 4px;
+  min-width: 40px;
+  min-height: 40px;
+  justify-content: center;
+}
+
+.icon_tag {
+  display: none;
+}
+
+.info_picture {
+  display: none;
+}
+
+.picture_info {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .headline {
+    display: block;
+    font-size: 40px;
+    font-weight: bold;
+    margin: 30px;
+    cursor: default;
+    align-self: flex-end;
+  }
+
+  .bullet div {
+    all: unset;
+    position: relative;
+    display: flex;
+    height: 34px;
+    cursor: default;
+  }
+
+  .icon_tag {
+    display: block;
+    margin: 0 8px;
+    padding-top: 8px;
+    height: 34px;
+    font-size: 16px;
+    align-self: center;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 768px) {
+  .headline {
+    font-size: 40px;
+    margin: 60px 0 15px;
+    align-self: center;
+  }
+
+  .content_block {
+    transform: scale(0.9);
+  }
+
+  .info_picture {
+    display: block;
+    position: absolute;
+    left: -160px;
+    top: -160px;
+    width: 320px;
+    height: 320px;
+  }
+
+  .icon_tag {
+    padding-top: 2px;
+    font-size: 24px;
+  }
+
+  .picture_info {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-decoration: none;
+    color: #868f98;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .headline {
+    font-size: 60px;
+  }
+
+  .content_block {
+    transform: scale(1);
+  }
+
+  .info_picture {
+    left: -264px;
+    top: -264px;
+    width: 528px;
+    height: 528px;
+  }
+}

@@ -1,4 +1,3 @@
-import { line } from "../../assets/SVG/SVG";
 import {
   FaFacebookSquare,
   FaLinkedin,
@@ -68,10 +67,10 @@ const mainPage = (props) => {
 
   return (
     <div className={styling.mainpage}>
-      <div id={styling.name}>BDEESORN RUKPRAYOON</div>
-      <div id={styling.occupation}>FRONT-END DEVELOPER</div>
-      <div style={{ paddingBottom: "2vh", fill: "#c3c8cd" }}>{line}</div>
-      <div id={styling.icon_block}>
+      <div className={styling.name}>BDEESORN RUKPRAYOON</div>
+      <div className={styling.occupation}>FRONT-END DEVELOPER</div>
+      <div className={styling.line} />
+      <div className={styling.icon_block}>
         <div className={styling.icon_click}>
           <FaFacebookSquare
             className={styling.icon_facebook}
@@ -90,10 +89,7 @@ const mainPage = (props) => {
             onClick={() => props.clicked("phone")}
           />
         </div>
-        <div
-          className={styling.icon_click}
-          style={{ width: "5.834vh", height: "5.834vh" }}
-        >
+        <div className={styling.icon_click}>
           <FaEnvelope
             className={styling.icon_mail}
             onClick={() => props.clicked("mail")}

@@ -1,20 +1,22 @@
-import logo from "../../Logo/Logo.svg";
+import Logo from "../../../assets/Logo/Logo";
 import NavigationItems from "../NavigationItems/NavigationItems";
-import classes from "./SideDrawer.module.css";
+import styling from "./SideDrawer.module.css";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 import Aux from "../../../hoc/Auxiliary/Auxiliary";
 
 const sideDrawer = (props) => {
-  let attachedClasses = [classes.SideDrawer, classes.Close];
+  let attachedstyling = [styling.SideDrawer, styling.Close];
   if (props.open) {
-    attachedClasses = [classes.SideDrawer, classes.Open];
+    attachedstyling = [styling.SideDrawer, styling.Open];
   }
   return (
     <Aux>
       <Backdrop show={props.open} clicked={props.closed} />
-      <div className={attachedClasses.join(" ")} onClick={props.closed}>
-        <div className={classes.Logo}>
-          <img src={logo} className="Logo" alt="logo" />
+      <div className={attachedstyling.join(" ")} onClick={props.closed}>
+        <div className={styling.logo_div}>
+          <div className={styling.logo_block}>
+            <Logo />
+          </div>
         </div>
         <nav>
           <NavigationItems />
