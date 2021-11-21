@@ -54,7 +54,7 @@ class fullPage extends Component {
       <ReactFullpage
         navigation
         // anchors={[linkName.main_page, linkName.info_page, linkName.work_page]}
-        licensekey={"?weMI#G!d1"}
+        licenseKey={"?weMI#G!d1"}
         menu={"#menu"}
         recordHistory={false}
         scrollingSpeed={1000}
